@@ -1,5 +1,5 @@
 import { Page, Locator } from '@playwright/test';
-import { BasePage } from './BasePage.js';
+import { BasePage } from './BasePage';
 
 export class CheckoutPage extends BasePage {
     readonly firstNameInput: Locator;

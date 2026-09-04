@@ -1,5 +1,5 @@
 import { Page, Locator } from '@playwright/test';
-import { BasePage } from './BasePage.js';
+import { BasePage } from './BasePage';
 
 export class InventoryPage extends BasePage {
     readonly productContainer: Locator;
