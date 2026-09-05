@@ -17,12 +17,34 @@ export class TestDataManager {
     }
 
     private loadTestData(): void {
-        const filePath = path.resolve(process.cwd(), 'src/testdata/testData.json');
+        const possiblePaths = [
+            path.resolve(process.cwd(), 'src/testdata/testData.json'),
+            path.resolve(__dirname, '../testdata/testData.json'),
+            path.resolve(__dirname, '../../src/testdata/testData.json'),
+            path.resolve(process.cwd(), 'dist/testdata/testData.json')
+        ];
+
+        let filePath = '';
+        let rawFile = '';
+        let loaded = false;
+
+        for (const p of possiblePaths) {
+            if (fs.existsSync(p)) {
+                filePath = p;
+                rawFile = fs.readFileSync(filePath, 'utf-8');
+                loaded = true;
+                break;
+            }
+        }
+
+        if (!loaded) {
+            throw new Error(`Failed to locate testData.json. Searched paths: ${possiblePaths.join(', ')}`);
+        }
+
         try {
-            const rawFile = fs.readFileSync(filePath, 'utf-8');
             this.testData = JSON.parse(rawFile);
         } catch (error) {
-            throw new Error(`Failed to load test data from path: ${filePath}. Error: ${error}`);
+            throw new Error(`Failed to parse test data JSON from path: ${filePath}. Error: ${error}`);
         }
     }
 
