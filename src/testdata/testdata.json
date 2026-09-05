@@ -1,0 +1,23 @@
+{
+  "standardCheckoutUser": {
+    "endpoint": "/inventory.html",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "order": {
+      "firstName": "Selva",
+      "lastName": "R",
+      "postalCode": "600001",
+      "productName": "Sauce Labs Backpack"
+    },
+    "paymentDetails": {
+      "cardNumber": "4242424242424242",
+      "expiry": "12/28",
+      "cvc": "123"
+    }
+  },
+  "lockedOutUser": {
+    "endpoint": "/",
+    "username": "locked_out_user",
+    "password": "secret_sauce"
+  }
+}
