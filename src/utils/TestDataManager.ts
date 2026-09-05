@@ -17,11 +17,13 @@ export class TestDataManager {
     }
 
     private loadTestData(): void {
-        const possiblePaths = [
+       const possiblePaths = [
+            path.resolve(process.cwd(), 'src/testdata/testdata.json'),
             path.resolve(process.cwd(), 'src/testdata/testData.json'),
+            path.resolve(__dirname, '../testdata/testdata.json'),
             path.resolve(__dirname, '../testdata/testData.json'),
-            path.resolve(__dirname, '../../src/testdata/testData.json'),
-            path.resolve(process.cwd(), 'dist/testdata/testData.json')
+            path.resolve(__dirname, '../../src/testdata/testdata.json'),
+            path.resolve(process.cwd(), 'dist/testdata/testdata.json')
         ];
 
         let filePath = '';
