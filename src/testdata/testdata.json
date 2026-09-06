@@ -19,5 +19,22 @@
     "endpoint": "/",
     "username": "locked_out_user",
     "password": "secret_sauce"
+  },
+  "stripeDemo3DS": {
+    "endpoint": "https://stripe-payments-demo.appspot.com/",
+    "payment": {
+      "name": "Jenny Rosen",
+      "email": "jenny@example.com",
+      "address": "185 Berry Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94103",
+      "cardNumber": "4000 0027 6000 3184",
+      "expiry": "12/28",
+      "cvc": "123",
+      "is3DSecure": true,
+      "paymentFrameSelector": "#card-element iframe",
+      "completeAuthButton": "#test-source-authorize-3ds"
+    }
   }
 }
